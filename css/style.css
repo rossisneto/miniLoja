@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: lightslategrey;
+    
     
 }
 
@@ -23,16 +23,19 @@
 
 }
 
+#carrinho{
+    margin-bottom: 50px;
+}
+
 .card-prod{
     display: flex;
     flex-direction: column;
-    
     justify-content: left;
     align-items: center;
     padding: 10px;
     margin: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    width: 100%;
+    width: 23%;
 }
 .card-prod a{
     display: inline-flexbox;
@@ -42,6 +45,6 @@
     color: rgba(0, 0, 255, 0.521);
 }
 .card-prod img{
-    width: 150px;
-    margin-right: 30px;
+    width: 250px;
+   
 }
