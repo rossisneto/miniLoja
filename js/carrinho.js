@@ -59,8 +59,7 @@ function inicializaLoja(){
             divItem.innerHTML+='<img src="'+items[i].img+'"></img><br>'
             divItem.innerHTML+=items[i].nomeItem+'<br>'
             divItem.innerHTML+=items[i].precoItem+'<br>'
-            divItem.innerHTML+=items[i].estoque+'<br>'
-            divItem.innerHTML+='<a href="javascript:incluirItem('+items[i].id+')">Comprar</a><br><br>'
+            divItem.innerHTML+='<a href="javascript:incluirItem('+items[i].id+')"><i class="fa-solid fa-cart-shopping"></i></a><br><br>'
             
             //efetivando a inclusão da div no html     
             divProdutos.appendChild(divItem);
@@ -72,7 +71,18 @@ function incluirItem(id){
     for(let i=0;i<items.length;i++){
         if(items[i].id==id){
             items[i].qtd++;
+            
+            //Enviando requisição post
+            let request = new XMLHttpRequest();
+            request.open("POST", "http://localhost:3000/produto/incluir")
+            request.setRequestHeader("Accept", "application/json");
+            request.setRequestHeader("Content-Type", "application/json");
+            
+            request.send(JSON.stringify(items[i]))
+            console.log(items[i])
         }
+
+
     }
     atualizaCarrinho()
 }
