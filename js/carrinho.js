@@ -1,4 +1,5 @@
 const items = [
+    
     {
         id:0,
         img: './img/product.png',
@@ -33,12 +34,25 @@ const items = [
         img: './img/product.png',
         nomeItem: 'Sapato',
         tamanhoItem: 'M',
-        precoItem: 69.90,
+        precoItem: 9.90,
         estoque:2,
         qtd:0
     }
+    
+   
 
 ]
+
+/*
+let items = new XMLHttpRequest()
+items.open("GET", "http://localhost:3000/produtos/listar", false)
+items.send()
+console.log(items.response)
+console.log(items.response._id)
+*/
+
+
+
 
 //Quando o cliente clicar no botao de comprar
 //Descobrir a id do item selecionado
@@ -74,7 +88,7 @@ function incluirItem(id){
             
             //Enviando requisição post
             let request = new XMLHttpRequest();
-            request.open("POST", "http://localhost:3000/produto/incluir")
+            request.open("POST", "http://localhost:3000/produtos/incluir")
             request.setRequestHeader("Accept", "application/json");
             request.setRequestHeader("Content-Type", "application/json");
             
